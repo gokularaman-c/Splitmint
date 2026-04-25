@@ -24,7 +24,7 @@ export function AppShell({ children }: { children: ReactNode }) {
             <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-mint shadow-mint">
               <Wallet className="h-5 w-5 text-primary-foreground" />
             </div>
-            <span className="text-lg font-bold tracking-tight">SplitMint</span><span className="ml-2 text-xs text-muted-foreground">INR build v3</span>
+            <span className="text-lg font-bold tracking-tight">SplitMint</span>
           </Link>
           <div className="flex items-center gap-3">
             <span className="hidden text-sm text-muted-foreground sm:inline">{user.email}</span>

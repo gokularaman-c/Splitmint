@@ -339,7 +339,7 @@ function ExpenseDialog({ groupId, participants, expense, onSaved, trigger }: {
                   <input type="checkbox" checked={included.has(p.id)} onChange={() => toggle(p.id)} className="h-4 w-4 accent-[var(--color-primary)]" />
                   <span className="flex-1 text-sm">{p.name}</span>
                   {splitMode !== "equal" && included.has(p.id) && (
-                    <Input type="number" step="0.01" className="w-28" placeholder={splitMode === "percentage" ? "%" : "$"}
+                    <Input type="number" step="0.01" className="w-28" placeholder={splitMode === "percentage" ? "%" : "₹"}
                       value={values[p.id] ?? ""} onChange={(e) => setValues({ ...values, [p.id]: e.target.value })} />
                   )}
                 </div>
@@ -487,7 +487,7 @@ function MintSenseDialog({ groupId, participants, expenses, onSaved }: { groupId
         <Tabs defaultValue="add">
           <TabsList className="grid w-full grid-cols-2"><TabsTrigger value="add">Add via text</TabsTrigger><TabsTrigger value="summary">Smart summary</TabsTrigger></TabsList>
           <TabsContent value="add" className="space-y-3 pt-2">
-            <p className="text-sm text-muted-foreground">e.g. "I paid $48 for dinner last night, split with Alex and Sam"</p>
+            <p className="text-sm text-muted-foreground">e.g. "I paid ₹800 for dinner last night, split with Alex and Sam"</p>
             <textarea className="min-h-[100px] w-full rounded-md border border-border bg-input p-3 text-sm" value={text} onChange={(e) => setText(e.target.value)} />
             <Button onClick={parseExpense} disabled={busy} className="w-full bg-gradient-mint text-primary-foreground shadow-mint">
               {busy ? <Loader2 className="h-4 w-4 animate-spin" /> : "Parse & add expense"}

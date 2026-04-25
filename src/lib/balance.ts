@@ -76,5 +76,10 @@ export function computeSplits(
 }
 
 export function fmt(n: number) {
-  return n.toLocaleString(undefined, { style: "currency", currency: "USD" });
+  const sign = n < 0 ? "-" : "";
+  const value = Math.abs(n).toLocaleString("en-IN", {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  });
+  return `${sign}₹${value}`;
 }

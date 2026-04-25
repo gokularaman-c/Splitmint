@@ -1,0 +1,4 @@
+project_id = "xrtpvcuznxbtyxvbbxie"
+
+[functions.mintsense]
+verify_jwt = true
